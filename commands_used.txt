@@ -1,5 +1,5 @@
 building docker image for the app: docker build -t weatherapp .
 running teh container:docker run -it -p 9095:9095 weatherapp
 jenkins as a docker image:docker run -d -p 9090:8080 -p 5000:5000 --name jenkin_bhargav jenkins/jenkins:lts
-geeting the jenkind password:docker exec -it jenkin_bhargav cat /var/jenkins_home/secrets/initialAdminPassword
+getting the jenkins password:docker exec -it jenkin_bhargav cat /var/jenkins_home/secrets/initialAdminPassword
 
