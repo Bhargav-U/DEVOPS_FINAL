@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather in Chennai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .weather-info {
+            text-align: center;
+        }
+        .weather-info h2 {
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+        .weather-info p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+        .error {
+            color: red;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Weather in Chennai</h1>
+    </div>
+
+    <div class="weather-info">
+        {% if weather.error %}
+            <p class="error">{{ weather.error }}</p>
+        {% else %}
+            <h2>{{ weather.city }}</h2>
+            <p>Temperature: {{ weather.temperature }} °C</p>
+            <p>Description: {{ weather.description }}</p>
+            <p>Humidity: {{ weather.humidity }} %</p>
+            <p>Pressure: {{ weather.pressure }} hPa</p>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>
+
